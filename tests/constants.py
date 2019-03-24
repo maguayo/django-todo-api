@@ -1,0 +1,12 @@
+""" Constants for tests """
+USERNAME = "hello@marcosaguayo.com"
+EMAIL = "hello@marcosaguayo.com"
+PASSWORD = "-FakePassword123-"
+FIRST_NAME = "Marcos"
+LAST_NAME = "Aguayo"
+
+USERNAME_SECONDARY = "second@marcosaguayo.com"
+EMAIL_SECONDARY = "second@marcosaguayo.com"
+PASSWORD_SECONDARY = "-FakePassword123-"
+FIRST_NAME_SECONDARY = "Marcos"
+LAST_NAME_SECONDARY = "Aguayo"
