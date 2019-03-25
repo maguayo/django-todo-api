@@ -16,17 +16,25 @@ class Task(BaseModel):
     )
     completed = models.BooleanField(default=False)
     completed_by = models.ForeignKey(
-        User, related_name="user_completed", on_delete=models.CASCADE, blank=True, null=True
+        User,
+        related_name="user_completed",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
     modified_by = models.ForeignKey(
-        User, related_name="user_modified", on_delete=models.CASCADE, blank=True, null=True
+        User,
+        related_name="user_modified",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
     )
 
     class Meta:
         db_table = "tasks"
         get_latest_by = "created"
         ordering = ["created"]
-    
+
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super(Task, self).save(*args, **kwargs)

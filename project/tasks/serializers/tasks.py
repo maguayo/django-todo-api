@@ -4,10 +4,9 @@ from django.utils import timezone
 
 
 class TasksodelSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Task
-        fields = ("__all__")
+        fields = "__all__"
 
     def create(self, validated_data):
         pass
