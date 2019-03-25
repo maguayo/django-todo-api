@@ -47,7 +47,10 @@ THIRD_PARTY_APPS = [
     "django_filters",
     "corsheaders",
 ]
-LOCAL_APPS = ["project.users.apps.UsersAppConfig"]
+LOCAL_APPS = [
+    "project.users.apps.UsersAppConfig",
+    "project.tasks.apps.TasksAppConfig",
+]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # Passwords
