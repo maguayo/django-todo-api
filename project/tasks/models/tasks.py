@@ -23,7 +23,7 @@ class Task(BaseModel):
     )
 
     class Meta:
-    	db_table = "tasks"
+        db_table = "tasks"
         get_latest_by = "created"
         ordering = ["created"]
     
