@@ -10,4 +10,5 @@ urlpatterns = [
     # Django Admin
     path(settings.ADMIN_URL, admin.site.urls),
     path("v1/", include("project.users.urls")),
+    path("v1/", include("project.tasks.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
