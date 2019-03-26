@@ -6,8 +6,9 @@ from project.models import BaseModel
 
 class Task(BaseModel):
     title = models.CharField(max_length=150)
-    slug = models.SlugField(max_length=150)
+    slug = models.SlugField(max_length=150, blank=True)
     content = models.CharField(max_length=254, blank=True)
+    due = models.DateField(blank=True, null=True)
     user = models.ForeignKey(
         User, related_name="owner", on_delete=models.CASCADE
     )
