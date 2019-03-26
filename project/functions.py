@@ -4,7 +4,7 @@ from django.conf import settings
 
 
 def response_wrapper(success, data, code=None):
-    return {"success": success, "code": code, "data": data}
+    return {"success": success, "data": data}
 
 
 def is_valid_token(token):

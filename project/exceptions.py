@@ -22,17 +22,13 @@ def custom_exception_handler(exc, context):  # type: ignore
 
     if isinstance(exc, ValidationError):
         return Response(
-            response_wrapper(
-                data=response.data, success=False, code=response.status_code
-            ),
+            response_wrapper(data=response.data, success=False),
             status=response.status_code,
         )
 
     if isinstance(exc, NotAuthenticated):
         return Response(
-            response_wrapper(
-                data=response.data, success=False, code=response.status_code
-            ),
+            response_wrapper(data=response.data, success=False),
             status=response.status_code,
         )
 
@@ -42,9 +38,7 @@ def custom_exception_handler(exc, context):  # type: ignore
         or isinstance(exc, NotFound)
     ):
         return Response(
-            response_wrapper(
-                data={"error": "Not found."}, success=False, code=404
-            ),
+            response_wrapper(data={"error": "Not found."}, success=False),
             status=status.HTTP_404_NOT_FOUND,
         )
 
